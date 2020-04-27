@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  joomla_Pro:
+    image: joomla:3.9.6
+    restart: always
+    depends_on:
+      - joomla_data
+    ports:
+      - 8080:80
+    volumes:
+      - new_dbos:/var/www/html    
+    environment:
+      JOOMLA_DB_HOST: joomla_data
+      JOOMLA_DB_USER: adarsh
+      JOOMLA_DB_NAME: joo_db
+      JOOMLA_DB_PASSWORD: redhat
+
+  joomla_data:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_USER: adarsh
+      MYSQL_PASSWORD: redhat
+      MYSQL_DATABASE: joo_db
+    volumes:
+      - db_store:/var/lib/mysql        
+   
+volumes:
+    new_dbos:
+    db_store:        
