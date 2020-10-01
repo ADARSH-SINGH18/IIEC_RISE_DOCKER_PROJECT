@@ -12,7 +12,7 @@ services:
       - new_dbos:/var/www/html    
     environment:
       JOOMLA_DB_HOST: joomla_data
-      JOOMLA_DB_USER: adarsh
+      JOOMLA_DB_USER: adarsh_singh
       JOOMLA_DB_NAME: joo_db
       JOOMLA_DB_PASSWORD: redhat
 
@@ -21,7 +21,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_USER: adarsh
+      MYSQL_USER: adarsh_singh
       MYSQL_PASSWORD: redhat
       MYSQL_DATABASE: joo_db
     volumes:
